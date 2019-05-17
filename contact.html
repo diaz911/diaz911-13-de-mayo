@@ -23,92 +23,50 @@ body {
 </head>
 
 <bodybgcolor="#7D9138">
- <table border="0" align="center" cellspacing="0">
-  <tbody>
-    <tr>
-      <td bgcolor="#455224">&nbsp; </td>
-      <td colspan="3" align="center" bgcolor="#455224">&nbsp; </td>
-      <td bgcolor="#455224">&nbsp;</td>
-    </tr>
-    <tr>
-      <td rowspan="8" bgcolor="#455224">&nbsp; </td>
-      <td colspan="2" align="left" bgcolor="#ADC770"><p>&nbsp;</p>
-        <p>
-          <label for="textfield"></label>
-          <label for="textfield2"></label>
-          <label for="email"><br>
-          <br>
-          </label>
-        </p>
-        <p align="right">
-          <label for="tel"></label>
-        </p>
-        <p align="right">
-          <label for="textarea"></label>
-        </p>      </td>
-      <td rowspan="7" bgcolor="#ADC770"><p align="right"><img src="imagenes/pagina-contacto.jpg" alt="contacto" width="271" height="383" longdesc="contacto"></p></td>
-      <td rowspan="8" bgcolor="#455224">&nbsp; </td>
-    </tr>
-    <tr>
-      <td align="left" bgcolor="#ADC770"><div align="right" class="Estilo3">Prenom:</div></td>
-      <td align="left" bgcolor="#ADC770"><label>
-        <input type="text" name="textfield2">
-      </label></td>
-    </tr>
-    <tr>
-      <td align="left" bgcolor="#ADC770"><div align="right" class="Estilo3">Nom:</div></td>
-      <td align="left" bgcolor="#ADC770"><label>
-        <input type="text" name="textfield3">
-      </label></td>
-    </tr>
-    <tr>
-      <td align="left" bgcolor="#ADC770"><div align="right" class="Estilo3">Email :</div></td>
-      <td align="left" bgcolor="#ADC770"><form name="form2" method="post" action="">
-        <label>
-        <input type="text" name="textfield4">
-          </label>
-      </form>      </td>
-    </tr>
-    <tr>
-      <td align="left" bgcolor="#ADC770"><span class="Estilo3">
-        <label for="tel">        </label>
-      </span>        <span class="Estilo3">
-      <label for="tel"></label>
-      </span>      <span class="Estilo3">
-      <label for="tel"></label>
-      </span>      <span class="Estilo3">
-      <label for="tel"></label>
-      </span>      <label for="tel"><div align="right" class="Estilo3">Téléphone:</div>
-      </label></td>
-      <td align="left" bgcolor="#ADC770"><form name="form3" method="post" action="">
-        <label>
-        <input name="textarea" type="text" value="">
-        </label>
-      </form>      </td>
-    </tr>
-    <tr>
-      <td align="left" bgcolor="#ADC770"><div align="right" class="Estilo3">Message:</div></td>
-      <td align="left" bgcolor="#ADC770"><form name="form1" method="post" action="">
-        <label>
-        <textarea name="textfield"></textarea>
-          </label>
-      </form>      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="left" bgcolor="#ADC770"><div align="center">
-        <form name="form4" method="post" action="">
-          <label>
-          <a href="mailto:diaz911ms@gmail.com" target="_blank">
-          <input type="submit" name="Submit" value="Envoyer">
-          </a></label>
-        </form>
-        </div></td>
-    </tr>
-    <tr>
-      <td colspan="2" bgcolor="#47531F">&nbsp;</td>
-      <td bgcolor="#47531F">&nbsp;</td>
-    </tr>
-  </tbody>
+    <section id="content" role="main" style="overflow: auto; width: 700px; margin: 0 auto; background-color: rgb(173, 199, 112); padding: 20px; border-style: solid; border-width: 10px 5px; border-color:  rgb(69, 82, 36);">
+        <div style="float: left; width:50%;">        
+        <form  name="contact" id="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" enctype="text/plain">
+                    <table>
+                            <p style="display: none;"><label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                                  </p>
+                            <tr>
+                                <td><label for="firstName">Prenom:</label></td>
+                                <td><input type="text" name="firstName" id="firstName" size="35" required data-validation="length" data-validation-length="2-20" /></td>
+                            </tr>
+                            <tr>
+                                <td><label for="lastName">Nom:</label></td>
+                                <td><input type="text" name="lastName" id="lastName" size="35" required data-validation="length" data-validation-length="2-30" /></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email">E-mail</label></td>
+                                <td><input type="email" name="email" id="email" size="35" placeholder="email@domain.com" data-validation="email" /></td>
+                            </tr>
+                            <tr>
+                                    <td><label for="tel">Téléphone:</label></td>
+                                    <td><input type="tel" name="phone"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel" size="35" placeholder="555-555-5555" maxlength="12" data-validation="length" data-validation-length="12" required/></td>
+                                </tr>
+                            <tr>
+                                <td><label for="message">Message</label></td>
+                                <td><textarea name="message" id="message" rows="10" cols="28" required data-validation="length" data-validation-length="2-500"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><button type="submit" name="submit" id="submit" value="Submit">Envoyer</button>&nbsp;<input type="reset" name="reset" id="reset" value="Reset" /></td>
+                            </tr>
+                    </table>
+                </form>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+                <script>
+                    $.validate({
+                        lang : 'fr'
+                    });
+                
+                </script>
+            </div>
+        <img src="https://xenodochial-lewin-1cb9ca.netlify.com/imagenes/pagina-contacto.jpg" alt="contacto" width="271" height="383" longdesc="contacto" style="float: right;">                
+    </section>         
+
 </table>
 <br>
 <table width="100%" border="0" align="center" cellspacing="0">
